@@ -1,0 +1,123 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg">
+    <div class="container-fluid">
+        <a id="a-no" class="navbar-brand" routerLink="/"> <img class="ms-5" src="../banner/logo-page.png" alt="" height="auto"
+                width="100rem"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="position-absolute top-0 end-0 collapse navbar-collapse" id="navbarNavAltMarkup">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                        <button id="busqueda-button" class="btn position-absolute end-0 me-3" type="submit"
+                            style="border-style: none"> <img src="../banner/busqueda-img.png" alt="Ubicación" width="24"
+                                height="24"></button>
+                    </form>
+                </div>
+            </nav>
+
+            <div id="menu-iconos" class="navbar-nav end-0">
+                <a class="nav-link active" aria-current="page" routerLink="/preguntas-frecuentes"><img
+                        src="../banner/preguntas-frecuentes-img.png" alt="Preguntas frecuentes"></a>
+                <a class="nav-link" routerLink="/ubicacion"><img src="../banner/ubicacion-img.png" alt="Ubicación"></a>
+
+                 <!-- Menu de noLogeado -->
+                @if(authLogin.email.length === 0 && authLogin.password.length === 0){
+                <a class="nav-link" style="cursor: pointer;" (click)="changeVisibilityHomeLogin()"><img
+                        src="../banner/login-img.png" alt="login">
+                    
+                    @if (isVisibleHomeLogin) {
+                
+                    <section class="container-fluid" style="cursor:default;">
+                        <div class="position-absolute end-0 bg-white mt-3 pt-2" style="border-top: solid; width: 65%;">
+                            <div class="container pt-2 pb-3">
+                                <img src="../banner/login-img.png" alt="login" width="24px" height="24px"
+                                    style="margin: 5px;"> <span class="sulphur-point-regular"
+                                    style="margin: 5px;">INICIAR SESION / CREAR CUENTA</span>
+                                <br>
+                                <p class="text-secondary sulphur-point-regular" style="padding-left: 1rem;">¿Ya
+                                    eres miembro?</p>
+                                <p class="sulphur-point-regular" style="text-align: justify;">Inicia sesión para
+                                    disfrutar de una experiencia personalizada y acceder a tus ofertas y ventajas como
+                                    miembro de Textil del Valle.</p>
+                                <button class="sulphur-point-regular ms-2 mb-2"
+                                    style="background-color: #FFAC69;color: black;"> <a id="a-no" href="" routerLink="/login"
+                                        style="text-decoration: none; color: black;" (click)="changeVisibilityHomeLogin()">INICIAR SESIÓN</a></button>
+                                <br>
+                                <a class="sulphur-point-regular ms-2 mb-2 text-dark" style="cursor: pointer;" routerLink="/register">Crear
+                                    una Cuenta</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    }
+                </a>
+                }
+                 
+                @if(authLogin.email.length > 0 && authLogin.password.length > 0){
+                <a class="nav-link" style="cursor: pointer;" (click)="changeVisibilityUsuarioLogeado()"><img
+                        src="../banner/login-img.png" alt="login">
+                    <!-- Menu de Administrador -->
+                     @if(isVisibleUsuarioLogeado){
+                        @if(authLogin.email === "admin@admin.com" && authLogin.password === "admin123"){
+                            <section class="container-fluid" style="cursor:default;">
+                                <div class="position-absolute end-0 bg-white mt-3 pt-2" style="border-top: solid; width: 65%;">
+                                    <div class="container pt-2 pb-3">
+                                        <img src="../banner/login-img.png" alt="admin" width="24px" height="24px"
+                                            style="margin: 5px;"> <span class="sulphur-point-regular"
+                                            style="margin: 5px;">ADMINISTRADOR</span>
+                                        <br>
+                                        <p class="text-secondary sulphur-point-regular" style="padding-left: 1rem;">Bienvenido de nuevo,
+                                            {{ usuarioLogeado.nombre + ' ' + usuarioLogeado.apellido }}!</p>
+                                        <button class="sulphur-point-regular ms-2 mb-2"
+                                            style="background-color: #FFAC69;color: black;"> <a id="a-no" href="" routerLink="/panel-control"
+                                                style="text-decoration: none; color: black;" >IR AL PANEL DE ADMINISTRACIÓN</a></button>
+                                                <button class="sulphur-point-regular ms-2 mb-2"
+                                            style="background-color: #FFAC69;color: black;"> <a id="a-no" href="" routerLink="/"
+                                                style="text-decoration: none; color: black;" (click)="CerrarSesion()">CERRAR SESIÓN</a></button>
+                                    </div>
+                                </div>
+                            </section>
+                        }
+                        <!-- Menu de Usuario -->
+                        @if(authLogin.email !== "admin@admin.com" && authLogin.password !== "admin123" && authLogin.email.length > 0 && authLogin.password.length > 0){
+                            <section class="container-fluid" style="cursor:default;">
+                                <div class="position-absolute end-0 bg-white mt-3 pt-2" style="border-top: solid; width: 65%;">
+                                    <div class="container pt-2 pb-3">
+                                        <img src="../banner/login-img.png" alt="user" width="24px" height="24px"
+                                            style="margin: 5px;"> <span class="sulphur-point-regular"
+                                            style="margin: 5px;">USUARIO</span>
+                                        <br>
+                                        <p class="text-secondary sulphur-point-regular" style="padding-left: 1rem;">Bienvenido de nuevo,
+                                            {{ usuarioLogeado.nombre + ' ' + usuarioLogeado.apellido }}!</p>
+                                        <button class="sulphur-point-regular ms-2 mb-2"
+                                            style="background-color: #FFAC69;color: black;"> <a id="a-no" href="" routerLink="/"
+                                                style="text-decoration: none; color: black;" >IR A MI PERFIL</a></button>
+                                                <button class="sulphur-point-regular ms-2 mb-2"
+                                            style="background-color: #FFAC69;color: black;"> <a id="a-no" href="" routerLink="/"
+                                                style="text-decoration: none; color: black;" (click)="CerrarSesion()">CERRAR SESIÓN</a></button>
+                                    </div>
+                                </div>
+                            </section>
+
+                        }
+                }
+                </a>
+                }
+                <a class="nav-link" routerLink="/favoritos"><img src="../banner/favoritos-img.png" alt="favoritos"></a>
+                <span
+                    style="border-left: solid; border-radius: 2px; border-color: black;; height: 2rem; margin: auto;"></span>
+
+                <a class="nav-link" routerLink="/carrito"><img src="../banner/cartera-img.png" alt="cartera"></a>
+            </div>
+
+            <div class="navbar-nav end-0 ms-4 me-5">
+                <a id="a-no" class="nav-link" routerLink="/nosotros"><img src="../banner/burger-menu.png" alt="menu-burger"
+                        width="24" height="24"></a>
+            </div>
+        </div>
+    </div>
+</nav>

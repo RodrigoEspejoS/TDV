@@ -1,0 +1,119 @@
+<!-- Contenedor para botón arriba de la tabla -->
+<!-- Botón para abrir el modal -->
+<div class="d-flex justify-content-start mb-3">
+    <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#nuevoProductoModal">
+     + Nuevo Producto
+    </button>
+</div>
+<!-- Modal para crear nuevo producto -->
+<div class="modal fade" id="nuevoProductoModal" tabindex="-1" aria-labelledby="nuevoProductoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (ngSubmit)="crearProducto()" #productoForm="ngForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nuevoProductoModalLabel">Nuevo Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nuevoProducto.nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modelo" class="form-label">Modelo</label>
+                        <input type="text" class="form-control" id="modelo" name="modelo" [(ngModel)]="nuevoProducto.modelo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="talla" class="form-label">Talla</label>
+                        <input type="text" class="form-control" id="talla" name="talla" [(ngModel)]="nuevoProducto.talla" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="tipoMaterial" class="form-label">Tipo Material</label>
+                        <input type="text" class="form-control" id="tipoMaterial" name="tipoMaterial" [(ngModel)]="nuevoProducto.tipoMaterial" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion" name="descripcion" [(ngModel)]="nuevoProducto.descripcion" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="nuevoProducto.precio" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="stock" class="form-label">Stock</label>
+                        <input type="number" class="form-control" id="stock" name="stock" [(ngModel)]="nuevoProducto.stock" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="imagenUrl" class="form-label">ImagenUrl</label>
+                        <input type="text" class="form-control" id="imagenUrl" name="imagenUrl" [(ngModel)]="nuevoProducto.imagenUrl" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="categoria" class="form-label">Categoría</label>
+                        <select class="form-select" id="nombreCategoria" name="nombreCategoria" [(ngModel)]="selectedCategoria" (change)="nuevoProducto.categoria = { nombreCategoria: selectedCategoria, descripcion: '' }" required>
+                            <option value="" disabled selected>Seleccione una categoría</option>
+                            <option value="Hombre">Hombre</option>
+                            <option value="Mujer">Mujer</option>
+                        </select>
+                    </div>
+                </div>   
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="!productoForm.form.valid">Crear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Tabla -->
+<table class="table table-bordered table-hover">
+    <thead class="table-light">
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Modelo</th>
+            <th>Tipo Material</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Categoria</th>
+            <th class="text-center">Acciones</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let producto of productos | slice:(currentPage-1)*10:(currentPage)*10; let i = index">
+            <!-- Mostrar los datos del producto -->
+            <th scope="row">{{ (currentPage - 1) * 10 + i + 1 }}</th>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.modelo}}</td>
+            <td>{{producto.tipoMaterial}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.stock}}</td>
+            <td>{{producto.categoria.nombreCategoria}}</td>
+            <td class="text-center">
+                <span class="me-3" style="cursor: pointer;" title="Editar">✏️</span>
+                <span style="cursor: pointer;" title="Eliminar" (click)="eliminarProducto(producto)">🗑️</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+            <a class="page-link" (click)="goToPage(currentPage - 1)" tabindex="-1" [attr.aria-disabled]="currentPage === 1">&laquo;</a>
+        </li>
+        <li class="page-item" *ngFor="let page of pages" [class.active]="page === currentPage">
+            <a class="page-link" (click)="goToPage(page)">{{page}}</a>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <a class="page-link" (click)="goToPage(currentPage + 1)" [attr.aria-disabled]="currentPage === totalPages">&raquo;</a>
+        </li>
+    </ul>
+</nav>

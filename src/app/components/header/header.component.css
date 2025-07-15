@@ -1,0 +1,14 @@
+#menu-iconos a img{
+    height: 24px;
+    width: 24px;
+}
+
+#a-no{
+    border-width: 0px;
+}
+
+
+a:hover{
+    border-bottom: solid;
+    border-width: 0.4px;
+}

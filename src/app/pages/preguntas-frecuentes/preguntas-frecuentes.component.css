@@ -1,0 +1,54 @@
+section{
+    padding: 0;
+    margin: 0;
+}
+
+div{
+    padding: 0;
+    margin: 0;
+}
+
+.contenedor-pf{
+    margin: 10ch;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block; /* Opcional: Para que el dropdown se comporte como un bloque en línea */
+}
+
+
+
+.dropdown-content {
+  position: absolute;
+  display: none; /* Inicialmente oculto */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%;
+  left: 0;
+}
+
+/* Mostrar el contenido al pasar el ratón */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ESTILOS DE LA PAGE DEFAULT Y PREGUNTAS DEFAULT*/
+
+#pf-default-1{
+    transition:calc()
+}
+@keyframes slideFromTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.slide-down {
+  opacity: 0;
+  transform: translateY(-28px);
+  animation: slideFromTop 0.8s ease-out forwards;
+}
+

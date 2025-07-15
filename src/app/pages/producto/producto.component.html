@@ -1,0 +1,107 @@
+<app-header></app-header>
+
+<section class="bg-white" style="padding-left: 150px; padding-right: 150px;">
+    <div class="container p-4">
+        <a href="" class="text-black">
+            <h5 class="monda-400"> <i class="bi bi-arrow-left"></i> REGRESAR</h5>
+        </a>
+    </div>
+    <div class="container bg-white">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <ng-container *ngFor="let producto of productos">
+                <div class="row g-2" *ngIf="producto.id === selectedProductoId">
+                    <div class="col-8">
+                        <div class="card shadow-sm hover-shadow h-100">
+                            <img src="{{producto.imagenUrl}}" class="card-img-top h-100" style="object-fit:cover; min-height:200px;" alt="Producto Imagen Principal">
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex flex-column">
+                        <div class="card shadow-sm hover-shadow mb-2 flex-fill">
+                            <img src="{{producto.imagenUrl}}" class="card-img-top h-100" style="object-fit:cover; min-height:95px;" alt="Producto Imagen Secundaria 1">
+                        </div>
+                        <div class="card shadow-sm hover-shadow flex-fill">
+                            <img src="{{producto.imagenUrl}}" class="card-img-top h-100" style="object-fit:cover; min-height:95px;" alt="Producto Imagen Secundaria 2">
+                        </div>
+                    </div>
+                </div>
+                </ng-container>
+            </div>
+            <div class="col">
+                <ng-container *ngFor="let producto of productos">
+                <div class="card-body" *ngIf="producto.id === selectedProductoId">
+                    <a href="" class="text-hover" routerLink="/categoria/{{producto.categoria.nombreCategoria}}">
+                        <h5 id="categoria" class="monda-400">{{producto.categoria.nombreCategoria}}</h5>
+                    </a>
+                    <h1 id="nombreProducto" class="monda-400">{{producto.nombre}}</h1>
+                    <p id="descProducto" class="monda-400 small">{{producto.descripcion}}</p>
+                    <p id="precioProducto" class="monda-400 text-bold medium">
+                        <i class="bi bi-currency-dollar me-2"></i>{{producto.precio}}
+                    </p>
+                    <div class="mb-3">
+                        
+                        <span class="me-2">Talla:</span>
+                        <div class="d-flex flex-column gap-2">
+                            <div class="d-flex gap-2 p-4">
+                                <button type="button" class="ms-4 me-4 text-secondary btn btn-outline-warning talla-btn px-4" [class.active]="selectedTalla === 'S'" (click)="selectedTalla = 'S'">S</button>
+                                <button type="button" class="ms-4 text-secondary btn btn-outline-warning talla-btn px-4" [class.active]="selectedTalla === 'M'" (click)="selectedTalla = 'M'">M</button>
+                            </div>
+                            <div class="d-flex gap-2 ps-4 pe-4 pb-4">
+                                <button type="button" class="ms-4 me-4 text-secondary btn btn-outline-warning talla-btn px-4" [class.active]="selectedTalla === 'L'" (click)="selectedTalla = 'L'">L</button>
+                                <button type="button" class="ms-4 text-secondary btn btn-outline-warning talla-btn px-4" [class.active]="selectedTalla === 'XL'" (click)="selectedTalla = 'XL'">XL</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container ms-5">
+                        <button type="button" class="btn btnAgregarAlCarrito" [disabled]="!selectedTalla">Agregar al Carrito</button>
+                    </div>
+                    <div class="container mt-3 me-2">
+                        <p class="monda-400">Modelo: {{producto.modelo}}</p>
+                        <p class="monda-400">Descripción: {{producto.descripcion}}</p>
+                        <p class="monda-400">Categoría: {{producto.categoria.nombreCategoria}}</p>
+                        <p class="monda-400">Tipo de Material: {{producto.tipoMaterial}}</p>
+                    </div>
+                    
+                </div>
+                </ng-container>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-5 pb-5">
+        <h4 class="monda-400">Productos Relacionados</h4>
+    </div>
+
+    <section class="container-fluid">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 g-">
+        <div class="col d-flex align-items-stretch imagen-home" *ngFor="let producto of productos | slice:0:4">
+            <a routerLink="/producto/{{producto.nombre}}" class="w-100 h-100 text-decoration-none" style="cursor: pointer;" (click)="SeleccionarProducto(producto)">
+                <div class="card shadow-sm hover-shadow m-2 h-100 d-flex flex-column">
+                    <div class="position-relative">
+                        <img src="{{ producto.imagenUrl }}" class="card-img" alt="{{ producto.nombre }}" style="object-fit: cover; height: 450px;">
+                        <span class="position-absolute top-0 end-0 bg-light px-2 py-1 m-2 rounded-pill">
+                            <img src="../banner/favoritos-img.png" alt="Ubicación" width="24" height="24">
+                        </span>
+                    </div>
+                    <div class="card-body mt-auto">
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-currency-dollar me-2"></i>{{ producto.precio }}
+                        </p>
+                        <p class="card-text text-muted small">
+                            <i class="fas fa-map-marker-alt me-2"></i>{{ producto.nombre}}
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+</section>
+
+
+
+
+<app-footer></app-footer>

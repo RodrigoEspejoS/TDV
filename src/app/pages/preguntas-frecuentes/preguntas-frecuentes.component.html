@@ -1,0 +1,473 @@
+<app-header></app-header>
+
+<section class="container-fluid">
+
+    <div (click)="changePageDefault(); changeAllView()" id="banner-pf">
+        <img src="../banner/banner-pf.jpg" alt="" width="100%" height="100%">
+    </div>
+
+    <div class="row container-fluid mb-4">
+        <div class="col-4 bg-white text-center mt-5 mb-5"> <!-- botones para las preguntas -->
+            <button (click)="changePageCuenta(); changeAllView()" class="mt-5 mb-3 shadow"
+                style="width: 65%; height: 50px; border-bottom: solid; border-width: 2px; background-color: white; color: black; text-align: start;">
+                <img class="ms-3" src="../icon/cuenta-icon.png" alt="" width="30px" height="30px">
+                <span class="ms-3 sulphur-point-regular" style="font-size: 19px;">Cuenta</span>
+            </button>
+            <button (click)="changePageEnvio(); changeAllView()" class="mt-3 mb-3 shadow"
+                style="width: 65%; height: 50px; border-bottom: solid; border-width: 2px; background-color: white; color: black; text-align: start;">
+                <img class="ms-3" src="../icon/envio-icon.png" alt="" width="40px" height="36px">
+                <span class="ms-3 sulphur-point-regular" style="font-size: 19px;">Envío</span>
+            </button>
+            <button (click)="changePageTiendas(); changeAllView()" class="mt-3 mb-3 shadow"
+                style="width: 65%; height: 50px; border-bottom: solid; border-width: 2px; background-color: white; color: black; text-align: start;">
+                <img class="ms-3" src="../icon/tiendas-icon.png" alt="" width="40px" height="40px">
+                <span class="sulphur-point-regular" style="font-size: 19px;">Tiendas Boutiques & outlets</span>
+            </button>
+            <button (click)="changePageMedios(); changeAllView()" class="mt-3 mb-3 shadow"
+                style="width: 65%; height: 50px; border-bottom: solid; border-width: 2px; background-color: white; color: black; text-align: start;">
+                <img class="ms-3" src="../icon/medio-pago-icon.png" alt="" width="30px" height="30px">
+                <span class="ms-3 sulphur-point-regular" style="font-size: 19px;">Medio de pago</span>
+            </button>
+            <button (click)="changePageDevolucion(); changeAllView()" class="mt-3 mb-3 shadow"
+                style="width: 65%; height: 50px; border-bottom: solid; border-width: 2px; background-color: white; color: black; text-align: start;">
+                <img class="ms-3" src="../icon/devolucion-icon.png" alt="" width="30px" height="30px">
+                <span class="ms-3 sulphur-point-regular" style="font-size: 19px;">Devolución</span>
+            </button>
+            <button (click)="changePagePedido(); changeAllView()" class="mt-3 mb-3 shadow"
+                style="width: 65%; height: 50px; border-bottom: solid; border-width: 2px; background-color: white; color: black; text-align: start;">
+                <img class="ms-3" src="../icon/pedido-icon.png" alt="" width="30px" height="30px">
+                <span class="ms-3 sulphur-point-regular" style="font-size: 19px;">Pedido</span>
+            </button>
+        </div>
+        <div class="col"> <!-- secciones para cada pregunta -->
+            @switch (pages) {
+            @case ('default') {
+            <div class="contenedor-pf">
+                <h2 class="sulphur-point-bold">Preguntas Frecuentes</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> ¿Desde dónde se envia el pedido? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Nesciunt quam totam tenetur id porro, amet magnam incidunt reiciendis eius
+                        iure consequuntur voluptate fuga quibusdam quidem. Veniam voluptate commodi eos ad?</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;"> ¿Cómo sé si mi pedido se ha enviado? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Reiciendis, fugiat? Ab odio distinctio nesciunt fugit voluptates! Nulla cum,
+                        esse, nesciunt sequi ea, odio vel sit assumenda nihil architecto enim? Molestiae.</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view2 = !view2; changeView2()"
+                        style="margin: 0; padding: 0;"> ¿Cuánto demora la entrega? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view2) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Qui quod quis vitae aperiam totam voluptate quaerat natus magnam officia
+                        maxime! Expedita excepturi minus ad adipisci quam, quo amet veniam! Dolorum.</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view3 = !view3; changeView3()"
+                        style="margin: 0; padding: 0;"> ¿Donde realizan envíos? <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                    @if (view3) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Et optio temporibus fugit velit quasi cumque laudantium veniam assumenda iure
+                        in eum harum nisi voluptate dolore, tenetur, libero quia natus incidunt?</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view4 = !view4; changeView4()"
+                        style="margin: 0; padding: 0;"> ¿Pueden entregar mi pedido en la dirección que yo quiera? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view4) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Praesentium voluptas quasi debitis hic earum aliquid doloremque. Alias est
+                        numquam perferendis fugiat iusto, dolorum suscipit deleniti nisi, optio, magni autem voluptate!
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view5 = !view5; changeView5()"
+                        style="margin: 0; padding: 0;"> ¿Cuales son las opciones de envío? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view5) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Pariatur quisquam aut explicabo, dolorum maxime itaque quae obcaecati soluta.
+                        Libero non illo fugit odio veritatis, laboriosam quae distinctio pariatur voluptatum eum.</p>
+                    }
+                </div>
+            </div>
+            }
+            @case ('cuenta') {
+            <div class="contenedor-pf">
+                <h2 class="sulphur-point-bold">Cuenta</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> ¿Cómo se usarán mis datos personales? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3">Respetamos tu privacidad. Solo pedimos datos
+                        si deseas hacer un pedido, suscribirte al boletín o crear una cuenta. Usamos tu información para
+                        brindarte el mejor servicio y ofertas personalizadas.</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;">¿Por qué tengo que crear una cuenta? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Crear una cuenta en Lacoste permite guardar
+                        datos para compras rápidas, hacer listas de deseos, recibir ofertas y eventos exclusivos, ver
+                        historial de pedidos y almacenar direcciones de entrega.</p>
+                    }
+                </div>
+            </div>
+            }
+            @case ('envio') {
+            <div class="contenedor-pf">
+                <h2 class="sulphur-point-bold">Envio</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> ¿Desde dónde se envia el pedido? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> El almacén de la tienda online TDV se
+                        encuentra en su fabrica principal, Chinchas</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;"> ¿Cómo sé si mi pedido se ha enviado? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Al despachar tu pedido, recibirás un email
+                        con el número de seguimiento. También puedes consultar el estado de tu compra desde tu cuenta en
+                        la tienda online de TDV.</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view2 = !view2; changeView2()"
+                        style="margin: 0; padding: 0;"> ¿Cuánto demora la entrega? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view2) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Luego de realizar tu pedido: Capital y Ica
+                        reciben en 2 días hábiles. El resto del país en un plazo de 5 a 7 días hábiles.</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view3 = !view3; changeView3()"
+                        style="margin: 0; padding: 0;"> ¿Donde realizan envíos? <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                    @if (view3) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Los pedidos de TDV se entregan exclusivamente
+                        dentro del País. También se hacen pedidos a nivel global</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view4 = !view4; changeView4()"
+                        style="margin: 0; padding: 0;"> ¿Pueden entregar mi pedido en la dirección que yo quiera? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view4) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Entregamos en todo el territorio Peruano y
+                        extranjero, Indica la dirección de entrega al hacer el pedido; si no, se enviará a la dirección
+                        de facturación.</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view5 = !view5; changeView5()"
+                        style="margin: 0; padding: 0;"> ¿Cuales son las opciones de envío? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view5) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Envío estándar. Podrás consultar el valor del
+                        envío al finalizar tu compra.</p>
+                    }
+                </div>
+            </div>
+            }
+            @case ('tiendas') {
+            <div class="contenedor-pf">
+                <h2 class="sulphur-point-bold">Tiendas Boutiques & Outlets</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> ¿Donde está la tienda más cercana? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3">Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Ea, dolor ducimus minima, maiores, minus aliquam rem impedit maxime sequi ad
+                        quam incidunt recusandae nobis. Amet, quaerat. Illum nesciunt hic esse!</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;">¿Tienes curiosidad por nuestros productos? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum dolor sit, amet consectetur
+                        adipisicing elit. Placeat exercitationem recusandae voluptatum ex quidem esse tenetur atque
+                        aspernatur asperiores, eaque obcaecati quos aperiam autem, mollitia, debitis quibusdam cum!
+                        Voluptatem natus alias possimus doloribus, nisi aut!</p>
+                    }
+                </div>
+            </div>
+            }
+            @case ('medios') {
+            <div class="contenedor-pf">
+                <h2 class="sulphur-point-bold">Medios de pago</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> ¿Cómo se usa un código promocional?
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3">Elige el método de envío y agrega el código
+                        promocional en tu carrito antes de finalizar. Solo puedes usar un código por pedido, y el
+                        descuento se aplicará proporcionalmente al precio del artículo.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;">¿Cómo puedo estar seguro de que mis datos de pago están
+                        protegidos? <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Tu seguridad es nuestra prioridad. Puedes
+                        navegar sin ingresar datos, pero solicitaremos tu información al hacer un pedido, suscribirte al
+                        boletín o registrarte en la tienda online de TDV.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view2 = !view2; changeView2()"
+                        style="margin: 0; padding: 0;">¿Cómo puedo pagar mi pedido?
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view2) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> En la tienda online de TDV, puedes pagar con
+                        tarjetas Visa, MasterCard, PayPal o PagoEfectivo(Desde 70.00 soles hasta 1500.00 soles).
+                    </p>
+                    }
+                </div>
+            </div>
+            }
+            @case ('devolucion') {
+            <div class="contenedor-pf">
+                <h2 class="sulphur-point-bold">Devolución</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> ¿Qué debo hacer si recibo un producto dañado o defectuoso?
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Si un producto de TDV no cumple con los
+                        estándares de calidad, puedes reclamar hasta 6 meses desde la compra. Envía fotos del defecto
+                        según el tipo de producto y contacta al servicio al cliente.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;"> ¿Cuánto tarda el reembolso después de devolver el producto?
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Los productos devueltos con las cualidades
+                        correspondientes previamente mencionadas se reembolsan normalmente en el plazo de 30 días
+                        hábiles tras la recepción y realización de los controles de calidad pertinentes.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view2 = !view2; changeView2()"
+                        style="margin: 0; padding: 0;"> ¿Cómo se reembolsa el producto devuelto?
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view2) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> El reembolso se realizará mediante el mismo
+                        método de pago utilizado. Si pagaste con tarjeta de crédito, se devolverá el importe de los
+                        productos. Los gastos de envío no se reembolsan, salvo por productos defectuosos.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view3 = !view3; changeView3()"
+                        style="margin: 0; padding: 0;"> ¿Cuánto cuesta devolver un producto?
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                    @if (view3) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Todas las devoluciones son gratuitas.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view4 = !view4; changeView4()"
+                        style="margin: 0; padding: 0;"> ¿Cuánto tiempo dispongo para devolver un producto?
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view4) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Tienes derecho a cancelar tu compra y
+                        devolver los productos dentro de los 30 días a partir del día en el que hayan sido entregados.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view5 = !view5; changeView5()"
+                        style="margin: 0; padding: 0;"> ¿Se puede devolver un producto que no se ha pedido en la tienda
+                        online de TDV?
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view5) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Solo aceptamos devoluciones de productos
+                        comprados en TDV. Los productos devueltos por error serán destruidos en 10 días hábiles si no se
+                        contacta con nosotros. TDV no se responsabiliza por pérdidas o destrucción si no es su producto.
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view6 = !view6; changeView6()"
+                        style="margin: 0; padding: 0;"> ¿Qué pasa si no estoy en casa para recoger el pedido?
+
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view6) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Si no puedes recibir el pedido en la primera
+                        entrega, se realizará un segundo intento dentro de 48 a 72 horas hábiles. Si no se recibe el
+                        paquete, regresará al centro de distribución para iniciar el reembolso.
+
+                    </p>
+                    }
+                </div>
+            </div>
+            }
+            @case ('pedido') {
+            <div class="contenedor-pf">
+                <h2 class="sulphur-point-bold">Pedidos</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> ¿Cómo sé si mi pedido se ha tramitado?
+
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Después de realizar tu pedido, recibirás un
+                        mensaje de confirmación vía email (normalmente en el plazo de 15 minutos).
+
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;"> ¿Qué envoltorios de regalo tienen?
+
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Si eliges «envolver para regalo», los
+                        productos se enviarán en una bolsa de regalo (sujeto a stock). Este servicio es gratuito, aunque
+                        puede estar desactivado durante períodos de rebajas.
+
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view2 = !view2; changeView2()"
+                        style="margin: 0; padding: 0;"> ¿Tengo que hacer un pedido mínimo?
+
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view2) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> No hay necesidad de realizar un pedido mínimo
+                        en la tienda online de TDV.
+
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view3 = !view3; changeView3()"
+                        style="margin: 0; padding: 0;"> ¿Cuál es mi talla?
+
+                        <i class="bi bi-caret-right-fill"></i>
+                    </button>
+                    @if (view3) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Puedes consultar la guía de tallas disponible
+                        en la descripción de cada producto.
+
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view4 = !view4; changeView4()"
+                        style="margin: 0; padding: 0;"> ¿Qué ventajas tiene comprar en la tienda online de TDV?
+
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view4) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> La tienda online de TDV es la tienda oficial
+                        en Internet, ofreciendo los mismos productos que en las tiendas físicas, además de productos
+                        exclusivos.
+
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view5 = !view5; changeView5()"
+                        style="margin: 0; padding: 0;"> ¿Puedo cambiar o cancelar mi pedido de manera rápida una vez
+                        confirmado?
+
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view5) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Puedes cancelar tu compra rápidamente dentro
+                        de los 30 minutos posteriores a la confirmación del pedido. Después de ese plazo, deberás
+                        solicitar un reembolso tras devolver el producto, según lo establecido anteriormente.
+
+                    </p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view6 = !view6; changeView6()"
+                        style="margin: 0; padding: 0;"> ¿Cómo puedo seguir mi pedido?
+
+
+                        <i class="bi bi-caret-right-fill"></i> </button>
+                    @if (view6) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Si realizaste un pedido desde tu cuenta,
+                        podrás verlo en "Mi cuenta/Mis pedidos". También puedes seguirlo usando el enlace "Seguir mi
+                        pedido" con tu número de pedido y código postal.
+
+                    </p>
+                    }
+                </div>
+            </div>
+            }
+            }
+        </div>
+    </div>
+
+    <div id="foot-pf">
+        <div class="text-center">
+            <span class="sulphur-point-bold">¿No encontraste la respuesta a tu pregunta?</span>
+            <p class="sulphur-point-bolds">¡Te podemos ayudar! ¿Sobre qué quieres hablar?</p>
+        </div>
+        <div class="row row-cols-3 text-center pt-4">
+            <div class="col">
+                <a routerLink="" style="text-decoration: none; color: black;">
+                    <img src="../banner/banner-pf-1.jpg" alt="" width="auto" height="60%">
+                    <p>Orden</p>
+                </a>
+                
+            </div>
+            <div class="col">
+                <a routerLink="/register" style="text-decoration: none; color: black;">
+                    <img src="../banner/banner-pf-2.jpg" alt="" width="auto" height="60%">
+                    <p>Registro</p>
+                </a>
+            </div>
+            <div class="col">
+                <a routerLink="" style="text-decoration: none; color: black;">
+                    <img src="../banner/banner-pf-3.jpg" alt="" width="auto" height="60%">
+                    <p>Tiendas fisicas</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<app-footer></app-footer>

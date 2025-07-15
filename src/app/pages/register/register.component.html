@@ -1,0 +1,60 @@
+<app-home-login-vista></app-home-login-vista>
+<section class="container-fluid shadow">
+    <div class="row">
+         <div class="col p-5">
+            <div>
+                <h3 class="sulphur-point-regular pb-3 pt-5">CREAR UNA CUENTA</h3>
+                <p class="sulphur-point-regular text-secondary">Crea una cuenta para acceder a la información de tu perfil historial de pedidos y mucho más.</p>
+
+            </div>
+            <div>
+                <form class="px-4 py-3 text-center">
+                    <div class="mb-4 row">
+                        <input type="text" class="col formulario-email me-1"
+                            placeholder="Nombres" [(ngModel)]="nombre" name="nombre" required>
+                        <input type="text" class="col formulario-email ms-1"
+                            placeholder="Apellidos" [(ngModel)]="apellido" name="apellido" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" class="formulario-email"
+                            placeholder="Email" [(ngModel)]="email" name="email" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="password" class="formulario-email"
+                             placeholder="Contraseña" [(ngModel)]="password" name="password" required>
+                    </div>
+                    <div class="mb-5"></div>
+                    <button type="submit" class="btn btn-login" (click)="register()">REGISTRARSE</button>
+                </form>
+                <div class="text-center pb-5" style="border-bottom: solid; border-width: 0.8px;">
+                    <a class="link-hover" routerLink="/login" style="text-decoration: none;color: black;cursor: pointer;">Ya estás registrado? Logeate</a>
+                    <br>
+                    
+                </div>
+                <div class="mt-5 mb-2 text-center">
+                    <button type="submit" class="btn  btn-facebook sulphur-point-regular" style="font-size: 0.9rem;">INICIAR SESIÓN CON FACEBOOK
+                        
+                            <img class="ms-5" src="../icon/facebook-icon.svg" alt="" width="28px" height="28px">
+                     </button>
+                </div>
+                <div class="mt-3 mb-2 text-center">
+                    <button type="submit" class="btn  btn-google sulphur-point-regular" style="font-size: 0.9rem;">INICIAR SESIÓN CON GOOGLE <img class="" style="margin-left: 60px;" 
+                     src="../icon/google-icon.svg" alt="" width="28px" height="28px"> </button>
+                </div>
+            </div>
+        </div>
+    
+
+
+
+        <div class="col ps-0">
+            <img src="../banner-vertical/b-vertical1.jpg" alt="" width="100%" height="100%">
+        </div>
+
+    </div>
+       
+
+</section>
+
+
+<app-footer></app-footer>

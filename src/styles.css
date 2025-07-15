@@ -1,0 +1,97 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montaga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap');
+
+
+.monda-400 {
+  font-family: "Monda", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.monda-700 {
+  font-family: "Monda", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.montaga-regular {
+  font-family: "Montaga", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.montserrat-100 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+.montserrat-200 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+.montserrat-400 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.montserrat-900 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+.sulphur-point-light {
+  font-family: "Sulphur Point", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.sulphur-point-regular {
+  font-family: "Sulphur Point", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sulphur-point-bold {
+  font-family: "Sulphur Point", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+.text-size-16{
+  font-size: 16px;
+}
+
+section{
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+:root{
+    color-scheme: light dark;
+    
+}
+
+.imagen-home{
+  transition: transform 0.4s ease;
+}
+
+
+.imagen-home:hover{
+  transform: scale(1.02);
+}

@@ -1,0 +1,54 @@
+*{
+    zoom: 103%;
+}
+
+.formulario-email{
+    border: none;
+    background-color: white;
+    color: #555;
+    
+    border-bottom: 1px solid #333; /* línea inferior */
+    padding: 8px 0;
+    font-size: 16px;
+    cursor: text;
+    outline: none;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.btn-login{
+    width: 100%;
+    border: solid;
+    border-width: 0.8px;
+}
+.btn-login:hover{
+    background-color: black;
+    color: white;
+}
+
+.link-hover:hover{
+    border-bottom: solid;
+    border-width: 0.8px;
+}
+
+.btn-facebook{
+    width: 80%;
+    border: solid;
+    border-width: 0.8px;
+}
+
+.btn-facebook:hover{
+    background-color: #1877f2;
+    color: white;
+}
+
+.btn-google{
+    width: 80%;
+    border: solid;
+    border-width: 0.8px;
+}
+
+.btn-google:hover{
+    background-color: #dd4337;
+    color: white;
+}

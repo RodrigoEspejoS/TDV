@@ -1,0 +1,181 @@
+<app-header></app-header>
+<app-banner></app-banner>
+
+
+<section>
+    <div>
+        <h2 class="monda-400 text-center home-titulo-01"> EXPLORA NUESTROS PRODUCTOS DESTACADOS </h2>
+    </div>
+
+</section>
+<section class="container-fluid">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 g-">
+        <div class="col d-flex align-items-stretch imagen-home" *ngFor="let producto of productos | slice:0:4">
+            <a routerLink="/producto/{{producto.nombre}}" class="w-100 h-100 text-decoration-none" style="cursor: pointer;" (click)="SeleccionarProducto(producto)">
+                <div class="card shadow-sm hover-shadow m-2 h-100 d-flex flex-column">
+                    <div class="position-relative">
+                        <img src="{{ producto.imagenUrl }}" class="card-img" alt="{{ producto.nombre }}" style="object-fit: cover; height: 450px;">
+                        <span class="position-absolute top-0 end-0 bg-light px-2 py-1 m-2 rounded-pill">
+                            <img src="../banner/favoritos-img.png" alt="Ubicación" width="24" height="24">
+                        </span>
+                    </div>
+                    <div class="card-body mt-auto">
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-currency-dollar me-2"></i>{{ producto.precio }}
+                        </p>
+                        <p class="card-text text-muted small">
+                            <i class="fas fa-map-marker-alt me-2"></i>{{ producto.nombre}}
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <div>
+        <h2 class="monda-400 text-center home-titulo-01"> ESCOGE TU PROPIO ESTILO </h2>
+    </div>
+</section>
+
+<section class="container-fluid">
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-3 g-1 me-4 ms-4">
+        <!-- Prenda 1-->
+        <div class="col">
+            <div class="hover-shadow m-2">
+                <div class="position-relative">
+                    <img src="../home-productos/categorias-img-01.jpg" class="card-img" alt="Chompa básica">
+
+                </div>
+                <div class="p-4">
+                    <p class="card-text text-muted small montaga-regular text-size-16">
+                        Polos
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="hover-shadow m-2">
+                <div class="position-relative">
+                    <img src="../home-productos/categorias-img-02.jpg" class="card-img" alt="Chompa básica">
+
+                </div>
+                <div class="p-4">
+                    <p class="card-text text-muted small text-size-16">
+                        Camisetas
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="hover-shadow m-2">
+                <div class="position-relative">
+                    <img src="../home-productos/categorias-img-03.jpg" class="card-img" alt="Chompa básica">
+
+                </div>
+                <div class="p-4">
+                    <p class="card-text text-muted small text-size-16">
+                        Vestidos
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="hover-shadow m-2">
+                <div class="position-relative">
+                    <img src="../home-productos/categorias-img-04.jpg" class="card-img" alt="Chompa básica">
+
+                </div>
+                <div class="p-4">
+                    <p class="card-text text-muted small text-size-16">
+                        Casacas
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="hover-shadow m-2">
+                <div class="position-relative">
+                    <img src="../home-productos/categorias-img-05.jpg" class="card-img" alt="Chompa básica">
+
+                </div>
+                <div class="p-4">
+                    <p class="card-text text-muted small text-size-16">
+                        Pantalones
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="hover-shadow m-2">
+                <div class="position-relative">
+                    <img src="../home-productos/categorias-img-06.jpg" class="card-img" alt="Chompa básica">
+
+                </div>
+                <div class="p-4">
+                    <p class="card-text text-muted small text-size-16">
+                        Poleras
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-banner01></app-banner01>
+
+<section>
+    <div>
+        <h2 class="monda-400 home-titulo-01 ms-5"> ESCOGE TU PROPIO ESTILO </h2>
+    </div>
+</section>
+
+
+<section class="container-fluid">
+    <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 row-cols-xxl-4 g-">
+        <div class="col d-flex align-items-stretch imagen-home mt-4" *ngFor="let producto of productos | slice:0:8">
+            <a routerLink="/producto/{{producto.nombre}}" class="w-100 h-100 text-decoration-none" style="cursor: pointer;" (click)="SeleccionarProducto(producto)">
+                <div class="card shadow-sm hover-shadow m-2 h-100 d-flex flex-column">
+                    <div class="position-relative">
+                        <img src="{{ producto.imagenUrl }}" class="card-img" alt="{{ producto.nombre }}" style="object-fit: cover; height: 450px;">
+                        <span class="position-absolute top-0 end-0 bg-light px-2 py-1 m-2 rounded-pill">
+                            <img src="../banner/favoritos-img.png" alt="Ubicación" width="24" height="24">
+                        </span>
+                    </div>
+                    <div class="card-body mt-auto">
+                        <p class="card-text text-muted small">
+                            <i class="bi bi-currency-dollar me-2"></i>{{ producto.precio }}
+                        </p>
+                        <p class="card-text text-muted small">
+                            <i class="fas fa-map-marker-alt me-2"></i>{{ producto.nombre}}
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    </div>
+</section>
+
+<app-banner-nosotros></app-banner-nosotros>
+
+<app-clientes></app-clientes>
+
+<app-banner-ver-mas></app-banner-ver-mas>
+
+<app-footer></app-footer>

@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<section class="container-fluid bg-light" style="margin: 0; padding: 0">
+    <div class="" style="margin: 0; padding: 0">
+        <img src="../banner-ubicacion/banner-ubicacion.jpg" width="100%" height="100%">
+    </div>
+    
+    
+    <div class="container-fluid">
+        
+        @switch (pages) {
+        @case ('default') {
+            <div class="container m-5">
+                <h2 class="sulphur-point-bold">Ubicacion</h2>
+                <div class="mb-4 mt-5">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view = !view ; changeView()"
+                        style="margin: 0; padding: 0;"> Fabrica principal<i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Nesciunt quam totam tenetur id porro, amet magnam incidunt reiciendis eius
+                        iure consequuntur voluptate fuga quibusdam quidem. Veniam voluptate commodi eos ad?</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view1 = !view1; changeView1()"
+                        style="margin: 0; padding: 0;"> Oficinas<i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view1) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum dolor sit amet consectetur,
+                        adipisicing elit. Reiciendis, fugiat? Ab odio distinctio nesciunt fugit voluptates! Nulla cum,
+                        esse, nesciunt sequi ea, odio vel sit assumenda nihil architecto enim? Molestiae.</p>
+                    }
+                </div>
+                <div class="mb-4">
+                    <button class="pf-default btn sulphur-point-regular" (click)="view2 = !view2; changeView2()"
+                        style="margin: 0; padding: 0;"> ¿Cuánto demora la entrega? <i
+                            class="bi bi-caret-right-fill"></i> </button>
+                    @if (view2) {
+                    <p class="slide-down sulphur-point-regular mt-1 ms-3"> Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Qui quod quis vitae aperiam totam voluptate quaerat natus magnam officia
+                        maxime! Expedita excepturi minus ad adipisci quam, quo amet veniam! Dolorum.</p>
+                    }
+                </div>
+                
+            </div>
+            }
+        }
+    </div>
+</section>
+        
+
+
+<app-footer></app-footer>
