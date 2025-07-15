@@ -2,13 +2,13 @@ import { inject, Injectable } from '@angular/core';
 import { Producto } from '../models/producto.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  private apiUrl: string = 'http://ec2-18-216-136-187.us-east-2.compute.amazonaws.com:8080/api/producto';
+  private apiUrl: string = environment.ProductoUrl;
 
   private http = inject(HttpClient);
 
